@@ -1,0 +1,84 @@
+@charset "utf-8";
+body {
+	background-attachment: fixed;
+	background-image: url(background.jpg);
+	background-image: linear-gradient(to bottom, rgba(ff,ff,ff,0.9) 0%,rgba(ff,ff,ff,0.9) 100%), url(background.jpg);
+	background-repeat: repeat;
+	color: #FFF;
+}
+
+.heading {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: xx-large;
+	font-style: normal;
+	text-transform: uppercase;
+	color: #F60;
+}
+
+.sub_heading {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: x-large;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: capitalize;
+	background-color: inset 0px -8px 8px rgba(0, 0, 0, 0.25);
+	color: #369;
+}
+
+.regular_text {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: large;
+	font-style: normal;
+	line-height: normal;
+	color: #3F0;
+}
+
+a:link {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: large;
+	color: #FF0;
+	text-decoration: none;
+}
+
+a.button {
+	background-color: #4CAF50; /* Green */
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}
+
+a:visited {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: large;
+	font-style: normal;
+	line-height: normal;
+	text-decoration: none;
+	color: #F0F;
+}
+
+a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: large;
+	font-style: normal;
+	line-height: normal;
+	text-decoration: underline;
+	color: #F96;
+	background-color: #369;
+}
+
+/* iframe:hover {
+
+} */
+
+a:active {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: large;
+	font-style: normal;
+	line-height: normal;
+	color: #9FF;
+}

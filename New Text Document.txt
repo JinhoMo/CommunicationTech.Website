@@ -1,0 +1,33 @@
+/*
+ * For more examples see http://www.mozilla.org/unix/customizing.html
+ */
+
+/* Change color of active tab */
+tab{
+   -moz-appearance: none !important;
+}
+tab[selected="true"] {
+   background-color: #5C0011 !important;
+   color: #e8c890 !important;
+}
+.tab-icon {
+  margin: 0px 3px 0px -3px !important;
+}
+/*
+tab[selected="true"] {
+   background-color: rgb(222,218,210) !important;
+   color: black !important;
+}
+*/
+
+
+/* Change color of normal tabs */
+tab:not([selected="true"]) {
+   background-color: rgb(200,196,188) !important;
+   color: gray !important;
+}
+
+/* Make the active tab not bold */
+tab[selected="true"] {
+   font-weight: normal !important;
+}
