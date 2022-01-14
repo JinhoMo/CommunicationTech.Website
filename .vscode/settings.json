@@ -1,3 +1,4 @@
 {
-    "liveServer.settings.multiRootWorkspaceName": "w:"
+    "liveServer.settings.multiRootWorkspaceName": "w:",
+    "livePreview.defaultPreviewPath": "index.html"
 }
