@@ -12,25 +12,41 @@ body {
 	background-repeat: repeat;
 	background-color: white;
 }
- 
+
+.jump-to-source {
+	background: black;
+	padding: .5rem 1.5rem;
+	border-radius: 0 0 0.25rem 0.25rem;
+	position: absolute;
+	left: 0.5rem;
+	transform: translateY(-800%);
+	transition: transform 325ms ease-in;
+}
+
+.jump-to-source:focus {
+	transform: translateY(0);
+}
+
 .heading {
 	font-family: Arial, Helvetica, sans-serif;
 	background-repeat: no-repeat;
 	font-size: xx-large;
 	font-style: normal;
 	text-transform: uppercase;
-	top: 50%;
-  	left: 50%;
-	color: #F60;
+	position: center;
+	transform: translateX(20%);
+	/* top: 70%; */
+  	/* left: 50%; */
+	color: #4285F4;
 }
 
 .hbanner {
-	padding: 50px;
+	padding: 40px;
 	background-image: url(heading_banner.png);
+	background-repeat: no-repeat;
 	background-size: 800px 100px;
 	background-position: center;
-	opacity: 75%;
-	border-radius: 50%;
+	/* opacity: 75%; */
 
 }
 
