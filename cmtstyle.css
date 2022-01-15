@@ -34,18 +34,20 @@ body {
 	font-style: normal;
 	text-transform: uppercase;
 	position: center;
-	transform: translateX(20%);
-	/* top: 70%; */
-  	/* left: 50%; */
+	transform: translateY(15%);
 	color: #4285F4;
+
+	font-variant-position: ;
+
 }
 
 .hbanner {
 	padding: 40px;
 	background-image: url(heading_banner.png);
 	background-repeat: no-repeat;
-	background-size: 800px 100px;
+	background-size: 800px 125px;
 	background-position: center;
+	transform: translateY(-10%);
 	/* opacity: 75%; */
 
 }
@@ -57,7 +59,6 @@ body {
 	font-weight: normal;
 	font-variant: normal;
 	text-transform: capitalize;
-	background-color: inset 0px -8px 8px rgba(0, 0, 0, 0.25);
 	color: #369;
 }
 
