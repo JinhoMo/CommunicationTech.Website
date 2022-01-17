@@ -44,7 +44,13 @@ body {
   background-repeat: no-repeat;
   background-size: 800px 100px;
   background-position: center;
+  opacity: 100;
+  transition: background-image 325ms ease-in-out;
   /* transform: translateY(-5%); */
+}
+
+.hbanner:hover {
+  background-image: url(transparent_banner.png);
 }
 
 .sub_heading {
@@ -74,11 +80,6 @@ body {
   line-height: normal;
   color: #e94235;
   /* transform: translateY(-150%); */
-}
-
-italic {
-  font-style: italic;
-  font-size: absolute;
 }
 
 table {
