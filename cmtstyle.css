@@ -6,10 +6,10 @@ html {
 
 body {
   background-attachment: fixed;
-  background-image: url(background.png);
+  background-image: url(background2.jpg);
   background-repeat: repeat;
   background-color: white;
-  background-position: left center;
+  background-position: top right;
   /* background-position: top center; */
 }
 
@@ -20,11 +20,15 @@ body {
   position: absolute;
   left: 0.5rem;
   transform: translateY(-800%);
-  transition: transform 325ms ease-in;
+  transition: transform 325ms ease-in,
+  position 325ms ease-in,
+  z-index 325ms;
 }
 
 .jump-to-source:focus {
   transform: translateY(0);
+  z-index: -1;
+  position:relative;
 }
 
 .heading {
