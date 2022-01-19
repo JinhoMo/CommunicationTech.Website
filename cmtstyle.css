@@ -38,23 +38,22 @@ body {
   font-style: normal;
   text-transform: uppercase;
   position: center;
-  transform: translateY(15%);
-  color: #4285f4;
-}
+  transform: translateY(-10%);
+  color: #0335ff;
 
-.hbanner {
   padding: 40px;
   background-image: url(heading_banner.png);
   background-repeat: no-repeat;
   background-size: 800px 100px;
   background-position: center;
   opacity: 100;
-  transition: background-image 325ms ease-in-out;
-  /* transform: translateY(-5%); */
+  transition: background-image 325ms ease-in-out,
+  color 325ms ease-in-out;
 }
 
-.hbanner:hover {
+.heading:hover {
   background-image: url(transparent_banner.png);
+  color: #4285f4
 }
 
 .sub_heading {
