@@ -6,10 +6,11 @@ html {
 
 body {
   background-attachment: fixed;
-  background-image: url(background2.jpg);
+  /* background-image: url(background.png); */
+  background-image: url(background3.jpeg);
   background-repeat: repeat;
   background-color: white;
-  background-position: top right;
+  background-position: top left;
   /* background-position: top center; */
 }
 
@@ -72,8 +73,13 @@ body {
   font-size: larger;
   font-style: normal;
   line-height: normal;
+  text-indent: 25px;
   /* transform: translateY(-70%); */
   color: #3f0;
+}
+
+.regular_text::before {
+  content: "  ";
 }
 
 #description {
