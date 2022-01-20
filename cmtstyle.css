@@ -78,8 +78,8 @@ body {
   color: #3f0;
 }
 
-.regular_text::before {
-  content: "  ";
+.indent {
+  text-indent: 25px;
 }
 
 #description {
