@@ -92,7 +92,7 @@ body {
   line-height: normal;
   color: #e94235;
   background: rgba(53, 245, 104, 0.7);
-  display: inline-table;
+  font-display: inline;
   /* transform: translateY(-150%); */
 }
 
