@@ -1,86 +1,85 @@
 @charset "utf-8";
-
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  background-attachment: fixed;
-  /* background-image: url(background.png); */
-  background-image: url(background3.jpeg);
-  background-repeat: repeat;
-  background-color: white;
-  background-position: top left;
-  /* background-position: top center; */
+    background-attachment: fixed;
+    /* background-image: url(background.png); */
+    background-image: url(background3.jpeg);
+    background-repeat: repeat;
+    background-color: white;
+    background-position: top left;
+    /* background-position: top center; */
 }
 
 .jump-to-source {
-  background: black;
-  padding: 0.5rem 1.5rem;
-  border-radius: 0 0 0.25rem 0.25rem;
-  position: absolute;
-  left: 0.5rem;
-  transform: translateY(-800%);
-  transition: transform 325ms ease-in, position 325ms ease-in, z-index 325ms;
+    background: black;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0 0 0.25rem 0.25rem;
+    position: absolute;
+    left: 0.5rem;
+    transform: translateY(-800%);
+    transition: transform 325ms ease-in, position 325ms ease-in, z-index 325ms;
 }
 
 .jump-to-source:focus {
-  transform: translateY(0);
-  z-index: -1;
-  position: relative;
+    transform: translateY(0);
+    z-index: -1;
+    position: relative;
 }
 
 .heading {
-  font-family: Arial, Helvetica, sans-serif;
-  background-repeat: no-repeat;
-  text-align: center;
-  font-size: xx-large;
-  font-style: normal;
-  text-transform: uppercase;
-  position: center;
-  transform: translateY(-10%);
-  color: #0335ff;
-
-  padding: 40px;
-  background-image: url(heading_banner.png);
-  background-repeat: no-repeat;
-  background-size: 800px 100px;
-  background-position: center;
-  opacity: 100;
-  transition: background-image 325ms ease-in-out, color 325ms ease-in-out;
+    font-family: Arial, Helvetica, sans-serif;
+    background-repeat: no-repeat;
+    text-align: center;
+    font-size: xx-large;
+    font-style: normal;
+    text-transform: uppercase;
+    position: center;
+    transform: translateY(-10%);
+    color: #0335ff;
+    padding: 40px;
+    background-image: url(heading_banner.png);
+    background-repeat: no-repeat;
+    background-size: 800px 100px;
+    background-position: center;
+    opacity: 100;
+    transition: background-image 325ms ease-in-out, color 325ms ease-in-out;
 }
 
 .heading:hover {
-  background-image: url(transparent_banner.png);
-  color: #4285f4;
+    background-image: url(transparent_banner.png);
+    color: #4285f4;
 }
 
 .sub_heading {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: x-large;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: capitalize;
-  transform: translateY(10%);
-  color: #f4e242;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: capitalize;
+    transform: translateY(10%);
+    color: #f4e242;
 }
 
 .regular_text {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: larger;
-  font-style: normal;
-  line-height: normal;
-  text-indent: 25px;
-  padding-left: 25px;
-  padding-right: 25px;
-  /* transform: translateY(-70%); */
-  color: #3f0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    font-style: normal;
+    line-height: normal;
+    text-indent: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    /* transform: translateY(-70%); */
+    color: #3f0;
 }
 
 .indent {
-  text-indent: 25px;
+    text-indent: 25px;
 }
+
 
 /* #description {
   font-family: Arial, Helvetica, sans-serif;
@@ -94,70 +93,71 @@ body {
 } */
 
 table {
-  transform: translateY(-3%);
-  background: linear-gradient(rgba(91, 98, 255, 0.5), rgba(255, 94, 95, 0.5));
-  background-size: 110% 110%;
-  box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.5);
-  /* background: rgba(0, 0, 0, 0.5); */
+    transform: translateY(-3%);
+    background: linear-gradient(rgba(91, 98, 255, 0.5), rgba(255, 94, 95, 0.5));
+    background-size: 110% 110%;
+    box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.5);
+    /* background: rgba(0, 0, 0, 0.5); */
 }
 
 td {
-  transform: translateY(-3%);
+    transform: translateY(-3%);
 }
 
 .uppercase {
-  text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 .lowercase {
-  text-transform: lowercase;
+    text-transform: lowercase;
 }
 
 .capitalize {
-  text-transform: capitalize;
+    text-transform: capitalize;
 }
 
 a:link {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: large;
-  color: #ff0;
-  text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    color: #ff0;
+    text-decoration: none;
 }
 
 a.button {
-  background-color: #4caf50; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+    background-color: #4caf50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 
 a:visited {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: large;
-  font-style: normal;
-  line-height: normal;
-  text-decoration: none;
-  color: #f0f;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    font-style: normal;
+    line-height: normal;
+    text-decoration: none;
+    color: #f0f;
 }
 
 a:hover {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: large;
-  font-style: normal;
-  line-height: normal;
-  text-decoration: underline;
-  color: #f96;
-  background-color: #369;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    font-style: normal;
+    line-height: normal;
+    text-decoration: underline;
+    color: #f96;
+    background-color: #369;
 }
 
 a:active {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: large;
-  font-style: normal;
-  line-height: normal;
-  color: #9ff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    font-style: normal;
+    line-height: normal;
+    color: #9ff;
 }
