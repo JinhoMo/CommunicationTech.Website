@@ -21,15 +21,13 @@ body {
   position: absolute;
   left: 0.5rem;
   transform: translateY(-800%);
-  transition: transform 325ms ease-in,
-  position 325ms ease-in,
-  z-index 325ms;
+  transition: transform 325ms ease-in, position 325ms ease-in, z-index 325ms;
 }
 
 .jump-to-source:focus {
   transform: translateY(0);
   z-index: -1;
-  position:relative;
+  position: relative;
 }
 
 .heading {
@@ -49,13 +47,12 @@ body {
   background-size: 800px 100px;
   background-position: center;
   opacity: 100;
-  transition: background-image 325ms ease-in-out,
-  color 325ms ease-in-out;
+  transition: background-image 325ms ease-in-out, color 325ms ease-in-out;
 }
 
 .heading:hover {
   background-image: url(transparent_banner.png);
-  color: #4285f4
+  color: #4285f4;
 }
 
 .sub_heading {
@@ -98,7 +95,7 @@ body {
 
 table {
   transform: translateY(-3%);
-  background: linear-gradient(rgba(91,98,255, 0.5),rgba(255,94,95, 0.5));
+  background: linear-gradient(rgba(91, 98, 255, 0.5), rgba(255, 94, 95, 0.5));
   background-size: 110% 110%;
   box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.5);
   /* background: rgba(0, 0, 0, 0.5); */
