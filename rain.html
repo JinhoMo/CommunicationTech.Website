@@ -1,40 +1,38 @@
 <!DOCTYPE html>
 <html long="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-Type" content="ie=edge" />
+		<title>Colorful Rain / Jinho</title>
+		<link rel="stylesheet" href="rain_style.css" />
+		<link rel="title icon" href="icon.gif" type="img/icon" />
+	</head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="Content-Type" content="ie=edge" />
-    <title>Colorful Rain / Jinho</title>
-    <link rel="stylesheet" href="rain_style.css" />
-    <link rel="title icon" href="icon.gif" type="img/icon" />
-</head>
+	<body>
+		<script>
+			function rain() {
+				let amount = 75;
+				let body = document.querySelector("body");
+				let i = 0;
+				while (i < amount) {
+					let drop = document.createElement("i");
 
-<body>
-    <script>
-        function rain() {
-            let amount = 75;
-            let body = document.querySelector("body");
-            let i = 0;
-            while (i < amount) {
-                let drop = document.createElement("i");
+					let size = Math.random() * 5;
+					let posX = Math.floor(Math.random() * window.innerWidth);
+					let delay = Math.random() * -20;
+					let duration = Math.random() * 5;
 
-                let size = Math.random() * 5;
-                let posX = Math.floor(Math.random() * window.innerWidth);
-                let delay = Math.random() * -20;
-                let duration = Math.random() * 5;
+					drop.style.width = 0.2 + size + "px";
+					drop.style.left = posX + "px";
+					drop.style.animationDelay = delay + "s";
+					drop.style.animationDuration = 1 + duration + "s";
 
-                drop.style.width = 0.2 + size + "px";
-                drop.style.left = posX + "px";
-                drop.style.animationDelay = delay + "s";
-                drop.style.animationDuration = 1 + duration + "s";
+					body.appendChild(drop);
+					i++;
+				}
+			}
 
-                body.appendChild(drop);
-                i++;
-            }
-        }
-
-        rain();
-    </script>
-</body>
-
+			rain();
+		</script>
+	</body>
 </html>
