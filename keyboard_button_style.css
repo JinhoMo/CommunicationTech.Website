@@ -1,159 +1,184 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: consolas;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: consolas;
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100wh;
-    background: #232323;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100wh;
+  background: #232323;
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
 }
 
 span {
-    position: relative;
-    display: inline-block;
-    width: 80px;
-    height: 80px;
-    padding: 8px 15px;
-    margin: 8px 4px;
-    border-radius: 10px;
-    background: linear-gradient(100deg, #282828, #202020);
-    box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.15), inset 0px -8px 8px rgba(0, 0, 0, 0.25), 0 0 0 2px rgba(0, 0, 0, 0.75), 10px 20px 25px rgba(0, 0, 0, 0.4);
-    overflow: hidden;
-    animation: none;
-    transition: box-shadow 7250ms cubic-bezier(0, 2, 1, 0.5);
-    /* transition: box-shadow 2750ms cubic-bezier(0,1.4,1,0.8); */
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  padding: 8px 15px;
+  margin: 8px 4px;
+  border-radius: 10px;
+  background: linear-gradient(100deg, #282828, #202020);
+  box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.15), inset 0px -8px 8px rgba(0, 0, 0, 0.25),
+    0 0 0 2px rgba(0, 0, 0, 0.75), 10px 20px 25px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  animation: none;
+  transition: box-shadow 7250ms cubic-bezier(0, 2, 1, 0.5);
+  /* transition: box-shadow 2750ms cubic-bezier(0,1.4,1,0.8); */
 }
 
 span:active {
-    box-shadow: inset -8px 0 8px rgba(255, 255, 255, 0.15), inset 0px -8px 8px rgba(255, 255, 255, 0.25), 0 0 0 2px rgba(255, 255, 255, 0.75), 10px 20px 25px rgba(255, 255, 255, 0.4);
-    filter: brightness(1.15);
+  box-shadow: inset -8px 0 8px rgba(255, 255, 255, 0.15),
+    inset 0px -8px 8px rgba(255, 255, 255, 0.25), 0 0 0 2px rgba(255, 255, 255, 0.75),
+    10px 20px 25px rgba(255, 255, 255, 0.4);
+  filter: brightness(1.15);
 }
 
 rainbower {
-    position: relative;
-    display: inline-block;
-    width: 80px;
-    height: 80px;
-    padding: 8px 15px;
-    margin: 8px 4px;
-    border-radius: 10px;
-    background: linear-gradient(100deg, #282828, #202020);
-    box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.15), inset 0px -8px 8px rgba(0, 0, 0, 0.25), 0 0 0 2px rgba(0, 0, 0, 0.75), 10px 20px 25px rgba(0, 0, 0, 0.4);
-    overflow: hidden;
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  padding: 8px 15px;
+  margin: 8px 4px;
+  border-radius: 10px;
+  background: linear-gradient(100deg, #282828, #202020);
+  box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.15), inset 0px -8px 8px rgba(0, 0, 0, 0.25),
+    0 0 0 2px rgba(0, 0, 0, 0.75), 10px 20px 25px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  transition: box-shadow 7250ms cubic-bezier(0, 2, 1, 0.5);
 }
 
 rainbower:active {
-    animation: rainbow 15000ms linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  animation: rainbow 15000ms linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 rainbower:last-child {
-    width: 100%;
+  width: 100%;
 }
 
 rainbower::before {
-    content: "";
-    position: absolute;
-    top: 3px;
-    left: 4px;
-    bottom: 14px;
-    right: 12px;
-    background: linear-gradient(90deg, #232323, #4a4a4a);
-    border-radius: 10px;
-    box-shadow: -10px -10px 10px rgba(255, 255, 255, 0.25), 10px 5px 10px rgba(0, 0, 0, 0.15);
-    border-left: 1px solid #000004;
-    border-bottom: 1px solid #000004;
-    border-top: 1px solid #000900;
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  bottom: 14px;
+  right: 12px;
+  background: linear-gradient(90deg, #232323, #4a4a4a);
+  border-radius: 10px;
+  box-shadow: -10px -10px 10px rgba(255, 255, 255, 0.25), 10px 5px 10px rgba(0, 0, 0, 0.15);
+  border-left: 1px solid #000004;
+  border-bottom: 1px solid #000004;
+  border-top: 1px solid #000900;
 }
 
 rainbower i {
-    position: relative;
-    color: #fff;
-    font-style: normal;
-    font-size: 1.5em;
-    text-transform: uppercase;
+  position: relative;
+  color: #fff;
+  font-style: normal;
+  font-size: 1.5em;
+  text-transform: uppercase;
 }
-
 
 /* RAINBOW KEYFRAME */
 
 @keyframes rainbow {
-    0% {
-        box-shadow: inset -8px 0 8px rgba(255, 255, 255, 0.15), inset 0px -8px 8px rgba(255, 255, 255, 0.25), 0 0 0 2px rgba(255, 255, 255, 0.75), 10px 20px 25px rgba(255, 255, 255, 0.4);
-    }
-    7.14% {
-        box-shadow: inset -8px 0 8px rgba(255, 0, 0, 0.75), inset 0px -8px 8px rgba(255, 0, 0, 0.75), 0 0 0 2px rgba(255, 0, 0, 0.75), 10px 20px 25px rgba(255, 0, 0, 0.75);
-    }
-    14.28% {
-        box-shadow: inset -8px 0 8px rgba(255, 66, 0, 0.75), inset 0px -8px 8px rgba(255, 66, 0, 0.75), 0 0 0 2px rgba(255, 66, 0, 0.75), 10px 20px 25px rgba(255, 66, 0, 0.75);
-    }
-    21.42% {
-        box-shadow: inset -8px 0 8px rgba(255, 127, 0, 0.75), inset 0px -8px 8px rgba(255, 127, 0, 0.75), 0 0 0 2px rgba(255, 127, 0, 0.75), 10px 20px 25px rgba(255, 127, 0, 0.75);
-    }
-    28.56% {
-        box-shadow: inset -8px 0 8px rgba(255, 175, 0, 0.75), inset 0px -8px 8px rgba(255, 175, 0, 0.75), 0 0 0 2px rgba(255, 175, 0, 0.75), 10px 20px 25px rgba(255, 175, 0, 0.75);
-    }
-    35.7% {
-        box-shadow: inset -8px 0 8px rgba(255, 255, 0, 0.75), inset 0px -8px 8px rgba(255, 255, 0, 0.75), 0 0 0 2px rgba(255, 255, 0, 0.75), 10px 20px 25px rgba(255, 255, 0, 0.75);
-    }
-    42.84% {
-        box-shadow: inset -8px 0 8px rgba(127, 255, 0, 0.75), inset 0px -8px 8px rgba(127, 255, 0, 0.75), 0 0 0 2px rgba(127, 255, 0, 0.75), 10px 20px 25px rgba(127, 255, 0, 0.75);
-    }
-    50.98% {
-        box-shadow: inset -8px 0 8px rgba(0, 255, 0, 0.75), inset 0px -8px 8px rgba(0, 255, 0, 0.75), 0 0 0 2px rgba(0, 255, 0, 0.75), 10px 20px 25px rgba(0, 255, 0, 0.75);
-    }
-    58.12% {
-        box-shadow: inset -8px 0 8px rgba(0, 255, 127, 0.75), inset 0px -8px 8px rgba(0, 255, 127, 0.75), 0 0 0 2px rgba(0, 255, 127, 0.75), 10px 20px 25px rgba(0, 255, 127, 0.75);
-    }
-    65.26% {
-        box-shadow: inset -8px 0 8px rgba(0, 255, 255, 0.75), inset 0px -8px 8px rgba(0, 255, 255, 0.75), 0 0 0 2px rgba(0, 255, 255, 0.75), 10px 20px 25px rgba(0, 255, 255, 0.75);
-    }
-    72.4% {
-        box-shadow: inset -8px 0 8px rgba(0, 127, 255, 0.75), inset 0px -8px 8px rgba(0, 127, 255, 0.75), 0 0 0 2px rgba(0, 127, 255, 0.75), 10px 20px 25px rgba(0, 127, 255, 0.75);
-    }
-    79.54% {
-        box-shadow: inset -8px 0 8px rgba(0, 0, 255, 0.75), inset 0px -8px 8px rgba(0, 0, 255, 0.75), 0 0 0 2px rgba(0, 0, 255, 0.75), 10px 20px 25px rgba(0, 0, 255, 0.75);
-    }
-    86.68% {
-        box-shadow: inset -8px 0 8px rgba(127, 0, 255, 0.75), inset 0px -8px 8px rgba(127, 0, 255, 0.75), 0 0 0 2px rgba(127, 0, 255, 0.75), 10px 20px 25px rgba(127, 0, 255, 0.75);
-    }
-    93.82% {
-        box-shadow: inset -8px 0 8px rgba(255, 0, 255, 0.75), inset 0px -8px 8px rgba(255, 0, 255, 0.75), 0 0 0 2px rgba(255, 0, 255, 0.75), 10px 20px 25px rgba(255, 0, 255, 0.75);
-    }
-    100% {
-        box-shadow: inset -8px 0 8px rgba(255, 0, 127, 0.75), inset 0px -8px 8px rgba(255, 0, 127, 0.75), 0 0 0 2px rgba(255, 0, 127, 0.75), 10px 20px 25px rgba(255, 0, 127, 0.75);
-    }
+  0% {
+    box-shadow: inset -8px 0 8px rgba(255, 255, 255, 0.15),
+      inset 0px -8px 8px rgba(255, 255, 255, 0.25), 0 0 0 2px rgba(255, 255, 255, 0.75),
+      10px 20px 25px rgba(255, 255, 255, 0.4);
+  }
+  7.14% {
+    box-shadow: inset -8px 0 8px rgba(255, 0, 0, 0.75), inset 0px -8px 8px rgba(255, 0, 0, 0.75),
+      0 0 0 2px rgba(255, 0, 0, 0.75), 10px 20px 25px rgba(255, 0, 0, 0.75);
+  }
+  14.28% {
+    box-shadow: inset -8px 0 8px rgba(255, 66, 0, 0.75), inset 0px -8px 8px rgba(255, 66, 0, 0.75),
+      0 0 0 2px rgba(255, 66, 0, 0.75), 10px 20px 25px rgba(255, 66, 0, 0.75);
+  }
+  21.42% {
+    box-shadow: inset -8px 0 8px rgba(255, 127, 0, 0.75), inset 0px -8px 8px rgba(255, 127, 0, 0.75),
+      0 0 0 2px rgba(255, 127, 0, 0.75), 10px 20px 25px rgba(255, 127, 0, 0.75);
+  }
+  28.56% {
+    box-shadow: inset -8px 0 8px rgba(255, 175, 0, 0.75), inset 0px -8px 8px rgba(255, 175, 0, 0.75),
+      0 0 0 2px rgba(255, 175, 0, 0.75), 10px 20px 25px rgba(255, 175, 0, 0.75);
+  }
+  35.7% {
+    box-shadow: inset -8px 0 8px rgba(255, 255, 0, 0.75), inset 0px -8px 8px rgba(255, 255, 0, 0.75),
+      0 0 0 2px rgba(255, 255, 0, 0.75), 10px 20px 25px rgba(255, 255, 0, 0.75);
+  }
+  42.84% {
+    box-shadow: inset -8px 0 8px rgba(127, 255, 0, 0.75), inset 0px -8px 8px rgba(127, 255, 0, 0.75),
+      0 0 0 2px rgba(127, 255, 0, 0.75), 10px 20px 25px rgba(127, 255, 0, 0.75);
+  }
+  50.98% {
+    box-shadow: inset -8px 0 8px rgba(0, 255, 0, 0.75), inset 0px -8px 8px rgba(0, 255, 0, 0.75),
+      0 0 0 2px rgba(0, 255, 0, 0.75), 10px 20px 25px rgba(0, 255, 0, 0.75);
+  }
+  58.12% {
+    box-shadow: inset -8px 0 8px rgba(0, 255, 127, 0.75), inset 0px -8px 8px rgba(0, 255, 127, 0.75),
+      0 0 0 2px rgba(0, 255, 127, 0.75), 10px 20px 25px rgba(0, 255, 127, 0.75);
+  }
+  65.26% {
+    box-shadow: inset -8px 0 8px rgba(0, 255, 255, 0.75), inset 0px -8px 8px rgba(0, 255, 255, 0.75),
+      0 0 0 2px rgba(0, 255, 255, 0.75), 10px 20px 25px rgba(0, 255, 255, 0.75);
+  }
+  72.4% {
+    box-shadow: inset -8px 0 8px rgba(0, 127, 255, 0.75), inset 0px -8px 8px rgba(0, 127, 255, 0.75),
+      0 0 0 2px rgba(0, 127, 255, 0.75), 10px 20px 25px rgba(0, 127, 255, 0.75);
+  }
+  79.54% {
+    box-shadow: inset -8px 0 8px rgba(0, 0, 255, 0.75), inset 0px -8px 8px rgba(0, 0, 255, 0.75),
+      0 0 0 2px rgba(0, 0, 255, 0.75), 10px 20px 25px rgba(0, 0, 255, 0.75);
+  }
+  86.68% {
+    box-shadow: inset -8px 0 8px rgba(127, 0, 255, 0.75), inset 0px -8px 8px rgba(127, 0, 255, 0.75),
+      0 0 0 2px rgba(127, 0, 255, 0.75), 10px 20px 25px rgba(127, 0, 255, 0.75);
+  }
+  93.82% {
+    box-shadow: inset -8px 0 8px rgba(255, 0, 255, 0.75), inset 0px -8px 8px rgba(255, 0, 255, 0.75),
+      0 0 0 2px rgba(255, 0, 255, 0.75), 10px 20px 25px rgba(255, 0, 255, 0.75);
+  }
+  100% {
+    box-shadow: inset -8px 0 8px rgba(255, 0, 127, 0.75), inset 0px -8px 8px rgba(255, 0, 127, 0.75),
+      0 0 0 2px rgba(255, 0, 127, 0.75), 10px 20px 25px rgba(255, 0, 127, 0.75);
+  }
 }
 
 span:last-child {
-    width: 100%;
+  width: 100%;
 }
 
 span::before {
-    content: "";
-    position: absolute;
-    top: 3px;
-    left: 4px;
-    bottom: 14px;
-    right: 12px;
-    background: linear-gradient(90deg, #232323, #4a4a4a);
-    border-radius: 10px;
-    box-shadow: -10px -10px 10px rgba(255, 255, 255, 0.25), 10px 5px 10px rgba(0, 0, 0, 0.15);
-    border-left: 1px solid #000004;
-    border-bottom: 1px solid #000004;
-    border-top: 1px solid #000900;
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  bottom: 14px;
+  right: 12px;
+  background: linear-gradient(90deg, #232323, #4a4a4a);
+  border-radius: 10px;
+  box-shadow: -10px -10px 10px rgba(255, 255, 255, 0.25), 10px 5px 10px rgba(0, 0, 0, 0.15);
+  border-left: 1px solid #000004;
+  border-bottom: 1px solid #000004;
+  border-top: 1px solid #000900;
 }
 
 span i {
-    position: relative;
-    color: #fff;
-    font-style: normal;
-    font-size: 1.5em;
-    text-transform: uppercase;
+  position: relative;
+  color: #fff;
+  font-style: normal;
+  font-size: 1.5em;
+  text-transform: uppercase;
 }
