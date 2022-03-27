@@ -80,7 +80,7 @@ body {
 	position: relative;
 	width: 45px;
 	height: 45px;
-	margin: 0 5px;
+	margin: 0 4px;
 	display: grid;
 	place-items: center;
 	text-decoration: none;
