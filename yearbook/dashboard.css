@@ -14,7 +14,7 @@ body {
 }
 
 :root {
-	--element-left: 45px;
+	--element-left: 5px;
 	--element-progress: 450; 
 }
 
@@ -22,10 +22,6 @@ h2 {
 	text-transform: capitalize;
 	height: 75px;
 	width: 225px;
-}
-
-table {
-	position:absolute;
 }
 
 .skill {

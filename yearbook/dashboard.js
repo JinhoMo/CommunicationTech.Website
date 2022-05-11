@@ -1,4 +1,4 @@
-let target = 90;
+let target = 100;
 let progress = 450 - 450 * target * 0.01;
 let time = 0.002 * target ** 2 + -0.51 * target + 36.25;
 
@@ -13,7 +13,7 @@ setInterval(() => {
 	} else {
 		counter += 1;
 		if (counter == 100) {
-			document.querySelector(":root").style.setProperty("--element-left", "43px");
+			document.querySelector(":root").style.setProperty("--element-left", "8px");
 		}
 		number.innerHTML = counter + "%";
 	}
