@@ -35,3 +35,4 @@ function GetData() {
 }
 
 // window.open("https://8percent.kr", "안녕하세요^^", "width=800,height=400");
+
