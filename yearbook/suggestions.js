@@ -25,5 +25,5 @@ let suggestions = [
     "How to start YouTube Channel",
     "What does HTML stands for?",
     "What does CSS stands for?",
-    "name", 12
+    "name"
 ];
