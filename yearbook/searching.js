@@ -9,6 +9,7 @@ let webLink;
 // if user press any key and release
 inputBox.onkeyup = (e)=>{
     let userData = e.target.value; //user enetered data
+    console.log(userData);
     let emptyArray = [];
     if(userData){
         icon.onclick = ()=>{
@@ -45,6 +46,12 @@ function select(element){
         linkTag.click();
     }
     searchWrapper.classList.remove("active");
+}
+
+function enterkey(){
+    if (window.event.keyCode == 13){
+        
+    }
 }
 
 function showSuggestions(list){
