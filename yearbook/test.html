@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>file save/load</title>
+
+ 
+
+<script type="text/javascript">
+
+    var fso=new ActiveXObject("scripting.FileSystemObject");
+    var filename="C:\\book1.txt";
+    function savefile() {
+        if (!fso.FileExists(filename)) {
+            fso.CreateTextFile(filename,true);
+        }
+        var f=fso.OpenTextFile(filename,2,true);
+        f.Write(myarea.innerHTML);
+        f.Close();
+    }
+   
+    function loadfile() {
+        if (!fso.FileExists(filename)) {
+            fso.CreateTextFile(filename,true);
+        }
+        var f=fso.OpenTextFile(filename,1);
+        r=f.ReadAll();
+        f.Close();
+        myarea.innerHTML=r;
+    }
+   
+   
+    //function window.onload() {
+    //    loadfile(filename);
+    //}
+</script>
+
+
+</head>
+<body>
+ <table>
+  <tr>
+   <td>
+    <div id=myarea contenteditable=true style="width:320;height:240;border:solid 2 inset;overflow:scroll;background-color:silver;"></div>
+    <br><input type=button value=load onclick=loadfile()><input type=button value=save onclick=savefile()>
+   </td>
+  </tr>
+ </table>
+</form>
+</body>
+</html>
+
+
+ 
