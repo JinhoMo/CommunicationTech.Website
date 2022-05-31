@@ -5,7 +5,8 @@ const suggBox = searchWrapper.querySelector(".autocom-box");
 const icon = searchWrapper.querySelector(".icon");
 let linkTag = searchWrapper.querySelector("a");
 const stateTag = document.querySelector(".wrapper").querySelector("h1");
-let webLink;
+let stateMsg = stateTag.innerText;
+let timeOut = 3;
 
 // if user press any key and release
 inputBox.onkeyup = (e) => {
@@ -14,30 +15,14 @@ inputBox.onkeyup = (e) => {
     if (userData) {
 
         let k = e.key
-<<<<<<< HEAD
         if (k == "Enter") {
-            stateTag.innerHTML = `Congratulation "${userData}"!!!`;
-            // webLink = `https://www.google.com/search?q=${userData}`;
-            // linkTag.setAttribute("href", webLink);
-            // linkTag.click();
+            work(userData);
         }
         // else if (k == "ArrowDown")
 
         icon.onclick = () => {
-            webLink = `https://www.google.com/search?q=${userData}`;
-            linkTag.setAttribute("href", webLink);
-            linkTag.click();
-        };
-=======
-		if (k == "Enter") {
             work(userData);
-		}
-        // else if (k == "ArrowDown")
-
-		icon.onclick = () => {
-			work(userData);
-		};
->>>>>>> 43cccecd914fcab45c946284a931bdad96c56538
+        };
 
         emptyArray = suggestions.filter((data) => {
             //filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
@@ -48,6 +33,9 @@ inputBox.onkeyup = (e) => {
             return (data = `<li>${data}</li>`);
         });
         searchWrapper.classList.add("active"); //show autocomplete box
+        if (inputBox.value == "") {
+            searchWrapper.classList.remove("active");
+        }
         showSuggestions(emptyArray);
         let allList = suggBox.querySelectorAll("li");
         for (let i = 0; i < allList.length; i++) {
@@ -59,17 +47,22 @@ inputBox.onkeyup = (e) => {
     }
 };
 
-function work(data){
+
+function reset() {
+    stateTag.innerHTML = stateMsg;
+}
+
+function work(data) {
+    inputBox.value = '';
     stateTag.innerHTML = `Congratulation "${data}"!!!`;
+    setTimeout(reset, timeOut * 1000);
 }
 
 function select(element) {
     let selectData = element.textContent;
     inputBox.value = selectData;
     icon.onclick = () => {
-        webLink = `https://www.google.com/search?q=${selectData}`;
-        linkTag.setAttribute("href", webLink);
-        linkTag.click();
+        worker(selectData)
     };
     searchWrapper.classList.remove("active");
 }
