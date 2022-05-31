@@ -14,6 +14,7 @@ inputBox.onkeyup = (e) => {
     if (userData) {
 
         let k = e.key
+<<<<<<< HEAD
         if (k == "Enter") {
             stateTag.innerHTML = `Congratulation "${userData}"!!!`;
             // webLink = `https://www.google.com/search?q=${userData}`;
@@ -27,6 +28,16 @@ inputBox.onkeyup = (e) => {
             linkTag.setAttribute("href", webLink);
             linkTag.click();
         };
+=======
+		if (k == "Enter") {
+            work(userData);
+		}
+        // else if (k == "ArrowDown")
+
+		icon.onclick = () => {
+			work(userData);
+		};
+>>>>>>> 43cccecd914fcab45c946284a931bdad96c56538
 
         emptyArray = suggestions.filter((data) => {
             //filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
@@ -47,6 +58,10 @@ inputBox.onkeyup = (e) => {
         searchWrapper.classList.remove("active"); //hide autocomplete box
     }
 };
+
+function work(data){
+    stateTag.innerHTML = `Congratulation "${data}"!!!`;
+}
 
 function select(element) {
     let selectData = element.textContent;
