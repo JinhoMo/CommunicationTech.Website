@@ -3,6 +3,7 @@ console.log(suggestions.push(element));
 
 console.log()
 
+function 
 
 function readExcel() {
     let input = e.target;
