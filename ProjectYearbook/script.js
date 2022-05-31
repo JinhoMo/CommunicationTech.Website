@@ -15,17 +15,12 @@ inputBox.onkeyup = (e) => {
       
         let k = e.key
 		if (k == "Enter") {
-            stateTag.innerHTML = `Congratulation "${userData}"!!!`;
-			// webLink = `https://www.google.com/search?q=${userData}`;
-			// linkTag.setAttribute("href", webLink);
-			// linkTag.click();
+            work(userData);
 		}
         // else if (k == "ArrowDown")
 
 		icon.onclick = () => {
-			webLink = `https://www.google.com/search?q=${userData}`;
-			linkTag.setAttribute("href", webLink);
-			linkTag.click();
+			work(userData);
 		};
 
 		emptyArray = suggestions.filter((data) => {
@@ -47,6 +42,10 @@ inputBox.onkeyup = (e) => {
 		searchWrapper.classList.remove("active"); //hide autocomplete box
 	}
 };
+
+function work(data){
+    stateTag.innerHTML = `Congratulation "${data}"!!!`;
+}
 
 function select(element) {
 	let selectData = element.textContent;
