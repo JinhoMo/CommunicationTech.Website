@@ -10,6 +10,7 @@ let timeOut = 3;
 
 // if user press any key and release
 inputBox.onkeyup = (e) => {
+
     let userData = e.target.value; //user enetered data
     let emptyArray = [];
     if (userData) {
@@ -33,7 +34,7 @@ inputBox.onkeyup = (e) => {
             return (data = `<li>${data}</li>`);
         });
         searchWrapper.classList.add("active"); //show autocomplete box
-        if (inputBox.value == "") {
+        if (!inputBox.value.trim()) {
             searchWrapper.classList.remove("active");
         }
         showSuggestions(emptyArray);
@@ -46,7 +47,6 @@ inputBox.onkeyup = (e) => {
         searchWrapper.classList.remove("active"); //hide autocomplete box
     }
 };
-
 
 function reset() {
     stateTag.innerHTML = stateMsg;
@@ -62,7 +62,7 @@ function select(element) {
     let selectData = element.textContent;
     inputBox.value = selectData;
     icon.onclick = () => {
-        worker(selectData)
+        work(selectData)
     };
     searchWrapper.classList.remove("active");
 }
