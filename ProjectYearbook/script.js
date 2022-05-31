@@ -4,7 +4,7 @@ const inputBox = searchWrapper.querySelector("input");
 const suggBox = searchWrapper.querySelector(".autocom-box");
 const icon = searchWrapper.querySelector(".icon");
 let linkTag = searchWrapper.querySelector("a");
-const stateTag = searchWrapper.querySelector("h1");
+const stateTag = document.querySelector(".wrapper").querySelector("h1");
 let webLink;
 
 // if user press any key and release
@@ -12,14 +12,15 @@ inputBox.onkeyup = (e) => {
 	let userData = e.target.value; //user enetered data
 	let emptyArray = [];
 	if (userData) {
-        console.log(e.key)
-		if (e.key === "Enter") {
-            stateTag.innerHTML = "'worked!!!'";
-            alert("?");
+      
+        let k = e.key
+		if (k == "Enter") {
+            stateTag.innerHTML = `Congratulation "${userData}"!!!`;
 			// webLink = `https://www.google.com/search?q=${userData}`;
 			// linkTag.setAttribute("href", webLink);
 			// linkTag.click();
 		}
+        // else if (k == "ArrowDown")
 
 		icon.onclick = () => {
 			webLink = `https://www.google.com/search?q=${userData}`;
