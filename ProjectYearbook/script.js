@@ -9,6 +9,19 @@ let stateMsg = stateTag.innerText;
 let timeOut = 3;
 let count = -1;
 
+// window.addEventListener("keydown", (e) => {
+//     const key = document.getElementById(e.key);
+//     if (count == -1) {
+        
+//     }
+//     allList[count].classList.add("active");
+//   });
+  
+//   window.addEventListener("keyup", (e) => {
+//     const key = document.getElementById(e.key);
+//     if (key) key.classList.remove("pressed");
+//   });
+
 // if user press any key and release
 inputBox.onkeyup = (e) => {
 	let userData = e.target.value; //user enetered data
@@ -50,7 +63,7 @@ inputBox.onkeyup = (e) => {
             }
             console.log(count);
             console.log(allList[count]);
-            allList[count].classList.add("hover");
+            allList[count].classList.add("active");
 		} else if (k == "ArrowUp"){
             count -= 1;
             if (count < -1){
@@ -59,9 +72,10 @@ inputBox.onkeyup = (e) => {
             try {
                 console.log(count);
                 console.log(allList[count]);
-                allList[count].classList.add("hover");
+                allList[count].classList.add("active");
             } catch (err) {
                 console.log("selected input")
+                inputBox.focus();
             }
            }
 

@@ -85,6 +85,10 @@ body {
     background: #efefef;
 }
 
+.autocom-box li.active {
+    background: #efefef;
+}
+
 .search-input .icon {
     position: absolute;
     right: 0px;
