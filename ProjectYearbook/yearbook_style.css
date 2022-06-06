@@ -16,6 +16,22 @@ body {
     background: #664aff;
 }
 
+.jump-to-source {
+    background: black;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0 0 0.25rem 0.25rem;
+    position: absolute;
+    left: 0.5rem;
+    transform: translateY(-800%);
+    transition: transform 325ms ease-in, position 325ms ease-in, z-index 325ms;
+}
+
+.fixError:focus {
+    transform: translateY(0);
+    z-index: -1;
+    position: relative;
+}
+
 .wrapper {
     max-width: 450px;
     margin: 150px auto;

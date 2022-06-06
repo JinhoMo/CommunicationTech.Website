@@ -8,6 +8,13 @@ const stateTag = document.querySelector(".wrapper").querySelector("h1");
 let stateMsg = stateTag.innerText;
 let timeOut = 3;
 let count = -1;
+let timeout;
+
+if (navigator.onLine) {
+    alert(navigator.onLine); // cellular
+}
+
+
 
 // let a = prompt("testing");
 // alert(a);
@@ -83,10 +90,11 @@ function reset() {
 }
 
 function work(data) {
+    clearTimeout(timeout);
     inputBox.value = "";
     count = -1;
     stateTag.innerHTML = `Congratulation "${data}"!!!`;
-    setTimeout(reset, timeOut * 1000);
+    timeout = setTimeout(reset, timeOut * 1000);
 }
 
 function select(element) {
