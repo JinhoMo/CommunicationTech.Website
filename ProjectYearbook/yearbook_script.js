@@ -9,16 +9,14 @@ let stateMsg = stateTag.innerText;
 let timeOut = 3;
 let count = -1;
 
+let a = prompt("testing");
+alert(a);
+
 // if user press any key and release
 inputBox.onkeyup = (e) => {
     let userData = e.target.value; //user enetered data
     let emptyArray = [];
     if (userData) {
-        let k = e.key;
-        if (k == "Enter") {
-            work(userData);
-        }
-
         icon.onclick = () => {
             work(userData);
         };
@@ -34,37 +32,42 @@ inputBox.onkeyup = (e) => {
         });
 
         searchWrapper.classList.add("active"); //show autocomplete box
+        showSuggestions(emptyArray);
+        let allList = suggBox.querySelectorAll("li");
+        let k = e.key;
+
+        // interact of suggestion box with user key inputs.
+        switch (k) {
+            case "ArrowDown":
+                count += 1;
+                if (count >= allList.length) {
+                    count = allList.length - 1;
+                }
+                allList[count].classList.add("active");
+                break;
+
+            case "ArrowUp":
+                count -= 1;
+                if (count < -1) {
+                    count = -1;
+                }
+                try {
+                    allList[count].classList.add("active");
+                } catch (err) {
+                    console.log("selected input");
+                }
+                break;
+
+            case "Enter":
+                if (count == -1) work(userData);
+                else work(allList[count].innerHTML);
+                break;
+        }
 
         // if user input is empty space, disable autocomplete box
         if (!inputBox.value.trim()) {
             searchWrapper.classList.remove("active");
         }
-
-        showSuggestions(emptyArray);
-        let allList = suggBox.querySelectorAll("li");
-
-        if (k == "ArrowDown") {
-            count += 1;
-            if (count >= allList.length) {
-                count = allList.length - 1;
-            }
-            console.log(count);
-            console.log(allList[count]);
-            allList[count].classList.add("hover");
-        } else if (k == "ArrowUp") {
-            count -= 1;
-            if (count < -1) {
-                count = -1
-            }
-            try {
-                console.log(count);
-                console.log(allList[count]);
-                allList[count].classList.add("hover");
-            } catch (err) {
-                console.log("selected input")
-            }
-        }
-
 
         for (let i = 0; i < allList.length; i++) {
             //adding onclick attribute in all li tag
@@ -81,6 +84,7 @@ function reset() {
 
 function work(data) {
     inputBox.value = "";
+    count = -1;
     stateTag.innerHTML = `Congratulation "${data}"!!!`;
     setTimeout(reset, timeOut * 1000);
 }
