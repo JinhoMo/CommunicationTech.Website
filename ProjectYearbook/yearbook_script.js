@@ -9,18 +9,8 @@ let stateMsg = stateTag.innerText;
 let timeOut = 3;
 let count = -1;
 
-// window.addEventListener("keydown", (e) => {
-//     const key = document.getElementById(e.key);
-//     if (count == -1) {
-
-//     }
-//     allList[count].classList.add("active");
-//   });
-
-//   window.addEventListener("keyup", (e) => {
-//     const key = document.getElementById(e.key);
-//     if (key) key.classList.remove("pressed");
-//   });
+let a = prompt("testing");
+alert(a);
 
 // if user press any key and release
 inputBox.onkeyup = (e) => {
@@ -46,7 +36,7 @@ inputBox.onkeyup = (e) => {
 		let allList = suggBox.querySelectorAll("li");
 		let k = e.key;
 
-        // interact of suggestion box with user key input.
+		// interact of suggestion box with user key inputs.
 		switch (k) {
 			case "ArrowDown":
 				count += 1;
