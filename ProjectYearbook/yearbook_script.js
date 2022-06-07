@@ -1,5 +1,5 @@
 // getting all required elements
-const fixBox = document.querySelector(".fixError");
+const modeChanger = document.querySelector(".fixError");
 const searchWrapper = document.querySelector(".search-input");
 const inputBox = searchWrapper.querySelector("input");
 const suggBox = searchWrapper.querySelector(".autocom-box");
@@ -12,15 +12,17 @@ let timeOut = 3;
 let count = -1;
 let timeout;
 
-fixBox.addEventListener("keypress", function(event) {
-	if (event.key === "Enter") {
-	  event.preventDefault();
-	  fixBox.click();
-	}
-  });
+let mode = "standard"
 
-  
-  // if user press any key and release
+modeChanger.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        modeChanger.click();
+    }
+});
+
+
+// if user press any key and release
 inputBox.onkeyup = (e) => {
     let userData = e.target.value; //user enetered data
     let emptyArray = [];
@@ -32,7 +34,10 @@ inputBox.onkeyup = (e) => {
         emptyArray = suggestions.filter((data) => {
             //filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
             return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
+
         });
+
+        emptyArray = emptyArray.concat(defineInitial(userData));
 
         emptyArray = emptyArray.map((data) => {
             // passing return data inside li tag
@@ -65,8 +70,8 @@ inputBox.onkeyup = (e) => {
                     console.log("selected input");
                 }
                 break;
-				
-				case "Enter":
+
+            case "Enter":
                 if (count == -1) work(userData);
                 else work(allList[count].innerHTML);
                 break;
@@ -113,17 +118,58 @@ function showSuggestions(list) {
         userValue = inputBox.value;
         listData = `<li>${userValue}</li>`;
     } else {
-		listData = list.join("");
+        listData = list.join("");
     }
     suggBox.innerHTML = listData;
+}
+
+function upper(list) {
+    return list.map((data) => {
+        return (data = data.toLocaleUpperCase());
+    });
+}
+
+
+function defineInitial(user) {
+    return suggestions.filter((data) => {
+        let userInit = upper(user.split());
+        let dataInit = upper(data.split());
+        let bool = true;
+        for (let i = 0; i < data.length; i++) {
+            bool = bool && dataInit[i] == userInit[i];
+        }
+
+        return bool || (dataInit[0] == userInit[0] && dataInit[2] == userInit[1])
+    });
 }
 
 function notAnOption(name) {
     alert("The name/initial ${name} is not exist in the data\nPlease check your input.");
 }
 
-function fixMode(){
-	colourStyle.style.setProperty("--background-colour", "#070870");
+function modeChange() {
+    switch (mode) {
+        case "standard":
+            fixMode();
+            break;
+
+        case "fix":
+            standardMode();
+            break;
+    };
+}
+
+function fixMode() {
+    mode = "fix";
+    colourStyle.style.setProperty("--background-colour", "#070870");
+    modeChanger.value = "Standard Mode";
+
+}
+
+function standardMode() {
+    mode = "standard";
+    colourStyle.style.setProperty("--background-colour", "#E22C0F");
+    modeChanger.value = "Fix Mode";
 }
 
 // if (navigator.onLine) {
@@ -131,7 +177,3 @@ function fixMode(){
 // }
 
 // if user press any key and release
-
-
-// let a = prompt("testing");
-// alert(a);
