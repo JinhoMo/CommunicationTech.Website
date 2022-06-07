@@ -1,25 +1,26 @@
 // getting all required elements
+const fixBox = document.querySelector(".fixError");
 const searchWrapper = document.querySelector(".search-input");
 const inputBox = searchWrapper.querySelector("input");
 const suggBox = searchWrapper.querySelector(".autocom-box");
 const icon = searchWrapper.querySelector(".icon");
-let linkTag = searchWrapper.querySelector("a");
 const stateTag = document.querySelector(".wrapper").querySelector("h1");
+let colourStyle = document.querySelector(":root");
+let backgroundColor = getComputedStyle(colourStyle);
 let stateMsg = stateTag.innerText;
 let timeOut = 3;
 let count = -1;
 let timeout;
 
-if (navigator.onLine) {
-    alert(navigator.onLine); // cellular
-}
+fixBox.addEventListener("keypress", function(event) {
+	if (event.key === "Enter") {
+	  event.preventDefault();
+	  fixBox.click();
+	}
+  });
 
-
-
-// let a = prompt("testing");
-// alert(a);
-
-// if user press any key and release
+  
+  // if user press any key and release
 inputBox.onkeyup = (e) => {
     let userData = e.target.value; //user enetered data
     let emptyArray = [];
@@ -64,8 +65,8 @@ inputBox.onkeyup = (e) => {
                     console.log("selected input");
                 }
                 break;
-
-            case "Enter":
+				
+				case "Enter":
                 if (count == -1) work(userData);
                 else work(allList[count].innerHTML);
                 break;
@@ -112,7 +113,7 @@ function showSuggestions(list) {
         userValue = inputBox.value;
         listData = `<li>${userValue}</li>`;
     } else {
-        listData = list.join("");
+		listData = list.join("");
     }
     suggBox.innerHTML = listData;
 }
@@ -120,3 +121,17 @@ function showSuggestions(list) {
 function notAnOption(name) {
     alert("The name/initial ${name} is not exist in the data\nPlease check your input.");
 }
+
+function fixMode(){
+	colourStyle.style.setProperty("--background-colour", "#070870");
+}
+
+// if (navigator.onLine) {
+//     alert(navigator.onLine); // cellular
+// }
+
+// if user press any key and release
+
+
+// let a = prompt("testing");
+// alert(a);
