@@ -21,7 +21,6 @@ modeChanger.addEventListener("keypress", function(event) {
     }
 });
 
-
 // if user press any key and release
 inputBox.onkeyup = (e) => {
     let userData = e.target.value; //user enetered data
@@ -38,6 +37,8 @@ inputBox.onkeyup = (e) => {
         });
 
         emptyArray = emptyArray.concat(defineInitial(userData));
+
+        console.log(emptyArray);
 
         emptyArray = emptyArray.map((data) => {
             // passing return data inside li tag
@@ -125,21 +126,23 @@ function showSuggestions(list) {
 
 function upper(list) {
     return list.map((data) => {
-        return (data = data.toLocaleUpperCase());
+        return (data.toLocaleUpperCase());
     });
 }
 
+function log(d) {
+    console.log(d);
+}
 
 function defineInitial(user) {
     return suggestions.filter((data) => {
-        let userInit = upper(user.split());
-        let dataInit = upper(data.split());
+        let userInit = upper(user.split("."));
+        let dataInit = upper(data.split(" "));
         let bool = true;
-        for (let i = 0; i < data.length; i++) {
-            bool = bool && dataInit[i] == userInit[i];
+        for (let i = 0; i < dataInit.length; i++) {
+            bool = bool && dataInit[i].startsWith(userInit[i]);
         }
-
-        return bool || (dataInit[0] == userInit[0] && dataInit[2] == userInit[1])
+        return bool || (dataInit[0].startsWith(userInit[0]) && dataInit[dataInit.length - 1].startsWith(userInit[userInit.length - 1]))
     });
 }
 
