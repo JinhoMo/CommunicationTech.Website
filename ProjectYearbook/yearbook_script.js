@@ -74,7 +74,7 @@ inputBox.onkeyup = (e) => {
 				try {
 					allList[count].classList.add("active");
 				} catch (err) {
-					console.log("selected input");
+					//seleted inputbox
 				}
 				break;
 
