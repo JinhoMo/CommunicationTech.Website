@@ -149,32 +149,61 @@ function replaceAll(str, element, replacer){
 }
 
 function initialFilter(data, user, m){
+    let dataInit = [];
+    let d = upper(data.split(" "));
+    for (let i = 0; i < d.length; i++){
+        dataInit.push(d[i].charAt());
+    }
+    
     let userInit = upper(user.split(""));
-	let dataInit = upper(data.split(" "));
 	let bool = true;
 	
     switch (m){
+
+        // return when all initial are match up. ex) Test User Name (T.U.N)
         case "all":
             for (let i = 0; i < dataInit.length; i++) {
-                    bool = bool && dataInit[i].startsWith(userInit[i]);
+                    bool = bool && dataInit[i] == userInit[i];
                 }
             return bool;
         
+        // return when only start and end are match up. ex) Test User Name (T.N)
         case "startEnd":
-            return dataInit[0].startsWith(userInit[0]) &&
-            dataInit[dataInit.length - 1].startsWith(userInit[userInit.length - 1])
+            
+            // if the length of the data is 2, assume it has been already in the array by "all" mode.
+            if (dataInit.length == 2) return false;
+
+            bool = dataInit[0] == userInit[0] && dataInit[dataInit.length - 1] == userInit[userInit.length - 1];
+
+            if (userInit.length == 2) return bool;
+
+            for (let i = 1; i < dataInit.length - 1; i++) {
+                bool = bool && !dataInit[i] == userInit[i];
+            }
+            return bool;
+
+        // return when only start and middle are match up. ex) Test User Name (T.U)
+        case "startMid":
+            return dataInit[0] == userInit[0] && dataInit[1] == userInit[1];
     }
 }
 
 function defineInitial(user) {
     let sub = [];
     user = replaceAll(user, ".", "");
+
 	sub = suggestions.filter((data) => {
 		return initialFilter(data, user, "all");
 	});
+
     sub = sub.concat(suggestions.filter((data) => {
 		return initialFilter(data, user, "startEnd");
 	}));
+
+    sub = sub.concat(suggestions.filter((data) => {
+		return initialFilter(data, user, "startMid");
+	}));
+
     return sub;
 }
 

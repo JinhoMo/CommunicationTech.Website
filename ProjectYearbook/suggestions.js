@@ -27,5 +27,6 @@ let suggestions = [
     "What does CSS stands for?",
     "name",
     "Test Name",
-    "Test User Name"
+    "Test User Name",
+    "Trust Abc Name"
 ];
