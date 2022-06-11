@@ -8,24 +8,67 @@
 
 <body>
 
-    <h1 id="demo"></h1>
+    <button onclick="openTextFile()">Open</button>
+	<div id="output">File Contents Area</div>
+
+    <script type="text/javascript">
+
+
+function openTextFile(){
+	function readImage(file) {
+        // Check if the file is an image.
+        if (file.type && !file.type.startsWith('image/')) {
+          console.log('File is not an image.', file.type, file);
+          return;
+        }
+      
+        const reader = new FileReader();
+        reader.addEventListener('load', (event) => {
+          img.src = event.target.result;
+        });
+        reader.readAsDataURL(file);
+      }
+
+      /*
+function processFile(file){
+    console.log(file);
+	var reader = new FileReader();
+	reader.readAsText(file,"UTF-8");
+	
+	reader.onload = function () {
+		output.innerText = reader.result;
+	};
+}
+	*/
+
+
+  //]]></script>
+
+    <!-- <button onClick="openTextFile()">Open</button>
+    <div id="output">File Contents Area</div>
 
     <script language="javascript">
-        var allText = [];
-        var allTextLines = [];
-        var Lines = [];
+        function openTextFile(){
+            var input = document.createElement(input);
+    
+            input.type = "file";
+            input.accept = ".csv";
+            input.click();
+            input.onchange = function(event){
+                processFile(event.target.files[0]);
+            };
+        }
 
-        var txtFile = new XMLHttpRequest();
-        txtFile.open("GET", "file:///c:/egg.csv", true);
-        txtFile.onreadystatechange = function() {
-            allText = txtFile.responseText;
-            allTextLines = allText.split(/\r\n|\n/);
+        // readFile("listTest.csv")
+
+        function readFile(file){
+            var reader = new FileReader();
+            reader.readAsText(file, "UTF-8");
+            reader.onload = function(){
+                output.innterText=read.result;
+            }
         };
-
-        console.log(allTextLines);
-        document.write(allText);
-        document.write(txtFile);
-    </script>
+    </script> -->
 </body>
 
 </html>

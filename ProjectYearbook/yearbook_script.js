@@ -30,7 +30,7 @@ inputBox.onkeyup = (e) => {
 			work(userData);
 		};
 
-		emptyArray = suggestions.filter((data) => {
+		emptyArray = names.filter((data) => {
 			//filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
 			return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
 		});
@@ -192,15 +192,15 @@ function defineInitial(user) {
     let sub = [];
     user = replaceAll(user, ".", "");
 
-	sub = suggestions.filter((data) => {
+	sub = names.filter((data) => {
 		return initialFilter(data, user, "all");
 	});
 
-    sub = sub.concat(suggestions.filter((data) => {
+    sub = sub.concat(names.filter((data) => {
 		return initialFilter(data, user, "startEnd");
 	}));
 
-    sub = sub.concat(suggestions.filter((data) => {
+    sub = sub.concat(names.filter((data) => {
 		return initialFilter(data, user, "startMid");
 	}));
 

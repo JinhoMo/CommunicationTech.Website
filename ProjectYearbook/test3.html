@@ -7,18 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
-        let a = [0,1,2,3];
-    </script>
+    <p id="demo">hello</p>
 
     <script>
-        function turna(){
-            alert(a);
-            return a;
-        }
+        let a = document.getElementById("demo")
+        a.addEventListener("click", b)
+        
+        function b(){
+            a.innerHTML = "yo";
+            console.log("worked");
+        };
     </script>
-<p id="demo"></p>
-<button type="button" onclick="document.getElementById('demo').innerHTML = turna()">yo</button>
 
 </body>
 </html>

@@ -1,4 +1,4 @@
-let suggestions = [
+let names = [
     "Channel",
     "CodingLab",
     "CodingNepal",
@@ -30,3 +30,5 @@ let suggestions = [
     "Test User Name",
     "Trust Abc Name"
 ];
+
+let eliminated = [];
