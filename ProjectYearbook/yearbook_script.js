@@ -11,7 +11,7 @@ let stateMsg = stateTag.innerHTML;
 let timeOut = 3;
 let count = -1;
 let timeout;
-
+let names;
 let mode = "standard";
 
 modeChanger.addEventListener("keypress", function (event) {
@@ -23,6 +23,7 @@ modeChanger.addEventListener("keypress", function (event) {
 
 // if user press any key and release
 inputBox.onkeyup = (e) => {
+	modeChange(true);
 	let userData = e.target.value; //user enetered data
 	let emptyArray = [];
 	if (userData) {
@@ -104,7 +105,9 @@ function reset() {
 
 function work(data) {
 	clearTimeout(timeout);
+	update();
 	inputBox.value = "";
+	searchWrapper.classList.remove("active");
 	count = -1;
 	stateTag.innerHTML = `Congratulation <br/>"${data}"!!!`;
 	timeout = setTimeout(reset, timeOut * 1000);
@@ -138,14 +141,6 @@ function upper(list) {
 
 function log(d) {
 	console.log(d);
-}
-
-function replaceAll(str, element, replacer){
-    let sub = str;
-    for(let i = 0; i < str.split(element).length - 1; i++){
-        sub = sub.replace(element, replacer);
-    }
-    return sub;
 }
 
 function initialFilter(data, user, m){
@@ -211,28 +206,44 @@ function notAnOption(name) {
 	alert("The name/initial ${name} is not exist in the data\nPlease check your input.");
 }
 
-function modeChange() {
+function modeChange(secondary = false) {
+	let first;
+	let second;
+	let modes = ["standard", "fix"]
+	if (secondary){
+		first = modes[1];
+		second = modes[0];
+	}else{
+		first = modes[0];
+		second = modes[1];
+	}
+
 	switch (mode) {
-		case "standard":
+		case first:
 			fixMode();
 			break;
 
-		case "fix":
+		case second:
 			standardMode();
 			break;
 	}
+	// function deleteNames(){
+
+	// };
 }
 
 function fixMode() {
 	mode = "fix";
 	colourStyle.style.setProperty("--background-colour", "#070870");
 	modeChanger.value = "Standard Mode";
+	names = nameList.eliminated;
 }
 
 function standardMode() {
 	mode = "standard";
 	colourStyle.style.setProperty("--background-colour", "#E22C0F");
 	modeChanger.value = "Fix Mode";
+	names = nameList.available;
 }
 
 // if (navigator.onLine) {

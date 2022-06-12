@@ -2,73 +2,37 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>sheetjs create xlsx excel example(html table)</title>
+  <meta charset="UTF-8">
+  <title>sheetjs create xlsx excel example(html table)</title>
 </head>
 
 <body>
 
-    <button onclick="openTextFile()">Open</button>
-	<div id="output">File Contents Area</div>
+  <button onclick="openTextFile()">Open</button>
+  <input type="file" src="listTest.csv">
+  <div id="output">File Contents Area</div>
 
-    <script type="text/javascript">
-
-
-function openTextFile(){
-	function readImage(file) {
-        // Check if the file is an image.
-        if (file.type && !file.type.startsWith('image/')) {
-          console.log('File is not an image.', file.type, file);
-          return;
-        }
-      
-        const reader = new FileReader();
-        reader.addEventListener('load', (event) => {
-          img.src = event.target.result;
-        });
-        reader.readAsDataURL(file);
-      }
-
-      /*
-function processFile(file){
-    console.log(file);
-	var reader = new FileReader();
-	reader.readAsText(file,"UTF-8");
-	
-	reader.onload = function () {
-		output.innerText = reader.result;
-	};
-}
-	*/
-
-
-  //]]></script>
-
-    <!-- <button onClick="openTextFile()">Open</button>
-    <div id="output">File Contents Area</div>
-
-    <script language="javascript">
-        function openTextFile(){
-            var input = document.createElement(input);
-    
-            input.type = "file";
-            input.accept = ".csv";
-            input.click();
-            input.onchange = function(event){
-                processFile(event.target.files[0]);
-            };
-        }
-
-        // readFile("listTest.csv")
-
-        function readFile(file){
-            var reader = new FileReader();
-            reader.readAsText(file, "UTF-8");
-            reader.onload = function(){
-                output.innterText=read.result;
+  <script>
+    readTextFile("listTest.csv")
+    function readTextFile(file)
+    {
+        var rawFile = new XMLHttpRequest();
+        rawFile.open("GET", file, false);
+        rawFile.onreadystatechange = function ()
+        {
+            if(rawFile.readyState === 4)
+            {
+                if(rawFile.status === 200 || rawFile.status == 0)
+                {
+                    var allText = rawFile.responseText;
+                    alert(allText);
+                }
             }
-        };
-    </script> -->
+        }
+        rawFile.send(null);
+    }
+    </script>
+
 </body>
 
 </html>
