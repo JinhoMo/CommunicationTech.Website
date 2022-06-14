@@ -109,7 +109,7 @@ function work(data) {
 	inputBox.value = "";
 	searchWrapper.classList.remove("active");
 	count = -1;
-	css("--value-backgroundTextTransform", "translate(-49%, -10%)");
+	// css("--value-backgroundTextTransform", "translate(-49%, -10%)");
 	stateTag.innerHTML = `Congratulation <br/>"${data}"!!!`;
 	timeout = setTimeout(reset, timeOut * 1000);
 }
