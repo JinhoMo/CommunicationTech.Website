@@ -109,9 +109,11 @@ function work(data) {
 	inputBox.value = "";
 	searchWrapper.classList.remove("active");
 	count = -1;
+	if (names.includes(data)){
+		stateTag.innerHTML = `Congratulation <br/>"${data}"!!!`;
+		timeout = setTimeout(reset, timeOut * 1000);
+	}else alert(`Sorry. The name "${data}" is not on our list.\r＞﹏＜`);
 	// css("--value-backgroundTextTransform", "translate(-49%, -10%)");
-	stateTag.innerHTML = `Congratulation <br/>"${data}"!!!`;
-	timeout = setTimeout(reset, timeOut * 1000);
 }
 
 function select(element) {
