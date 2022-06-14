@@ -109,6 +109,7 @@ function work(data) {
 	inputBox.value = "";
 	searchWrapper.classList.remove("active");
 	count = -1;
+	css("--value-backgroundTextTransform", "translate(-49%, -10%)");
 	stateTag.innerHTML = `Congratulation <br/>"${data}"!!!`;
 	timeout = setTimeout(reset, timeOut * 1000);
 }
@@ -143,63 +144,67 @@ function log(d) {
 	console.log(d);
 }
 
-function initialFilter(data, user, m){
-    let dataInit = [];
-    let d = upper(data.split(" "));
-    for (let i = 0; i < d.length; i++){
-        dataInit.push(d[i].charAt());
-    }
-    
-    let userInit = upper(user.split(""));
+function initialFilter(data, user, m) {
+	let dataInit = [];
+	let d = upper(data.split(" "));
+	for (let i = 0; i < d.length; i++) {
+		dataInit.push(d[i].charAt());
+	}
+
+	let userInit = upper(user.split(""));
 	let bool = true;
-	
-    switch (m){
 
-        // return when all initial are match up. ex) Test User Name (T.U.N)
-        case "all":
-            for (let i = 0; i < dataInit.length; i++) {
-                    bool = bool && dataInit[i] == userInit[i];
-                }
-            return bool;
-        
-        // return when only start and end are match up. ex) Test User Name (T.N)
-        case "startEnd":
-            
-            // if the length of the data is 2, assume it has been already in the array by "all" mode.
-            if (dataInit.length == 2) return false;
+	switch (m) {
+		// return when all initial are match up. ex) Test User Name (T.U.N)
+		case "all":
+			for (let i = 0; i < dataInit.length; i++) {
+				bool = bool && dataInit[i] == userInit[i];
+			}
+			return bool;
 
-            bool = dataInit[0] == userInit[0] && dataInit[dataInit.length - 1] == userInit[userInit.length - 1];
+		// return when only start and end are match up. ex) Test User Name (T.N)
+		case "startEnd":
+			// if the length of the data is 2, assume it has been already in the array by "all" mode.
+			if (dataInit.length == 2) return false;
 
-            if (userInit.length == 2) return bool;
+			bool =
+				dataInit[0] == userInit[0] &&
+				dataInit[dataInit.length - 1] == userInit[userInit.length - 1];
 
-            for (let i = 1; i < dataInit.length - 1; i++) {
-                bool = bool && !dataInit[i] == userInit[i];
-            }
-            return bool;
+			if (userInit.length == 2) return bool;
 
-        // return when only start and middle are match up. ex) Test User Name (T.U)
-        case "startMid":
-            return dataInit[0] == userInit[0] && dataInit[1] == userInit[1];
-    }
+			for (let i = 1; i < dataInit.length - 1; i++) {
+				bool = bool && !dataInit[i] == userInit[i];
+			}
+			return bool;
+
+		// return when only start and middle are match up. ex) Test User Name (T.U)
+		case "startMid":
+			return dataInit[0] == userInit[0] && dataInit[1] == userInit[1];
+	}
 }
 
 function defineInitial(user) {
-    let sub = [];
-    user = replaceAll(user, ".", "");
+	let sub = [];
+	user = replaceAll(user, ".", "");
 
 	sub = names.filter((data) => {
 		return initialFilter(data, user, "all");
 	});
 
-    sub = sub.concat(names.filter((data) => {
-		return initialFilter(data, user, "startEnd");
-	}));
+	sub = sub.concat(
+		names.filter((data) => {
+			return initialFilter(data, user, "startEnd");
+		})
+	);
 
-    sub = sub.concat(names.filter((data) => {
-		return initialFilter(data, user, "startMid");
-	}));
+	sub = sub.concat(
+		names.filter((data) => {
+			return initialFilter(data, user, "startMid");
+		})
+	);
 
-    return sub;
+	return sub;
 }
 
 function notAnOption(name) {
@@ -220,25 +225,34 @@ function modeChange() {
 
 function fixMode() {
 	mode = "fix";
-	colourStyle.style.setProperty("--background-colour", "#070870");
+	css("--background-colour", "#070870");
+	css("--background-textColour", "#E22C0F");
 	modeChanger.value = "Standard Mode";
 }
 
 function standardMode() {
 	mode = "standard";
-	colourStyle.style.setProperty("--background-colour", "#E22C0F");
+	css("--background-colour", "#E22C0F");
+	css("--background-textColour", "#070870");
 	modeChanger.value = "Fix Mode";
 }
 
-function setVariables(){
-	let bol = 
-	function setNames(){
-
-	}
+function setVariables() {
+	let bol = function setNames() {};
 }
 
-// if (navigator.onLine) {
-//     alert(navigator.onLine); // cellular
-// }
+function active() {
+	css("--value-backgroundTextTransform", "translate(-49%, -90%)");
+}
 
-// if user press any key and release
+function unActive() {
+	css("--value-backgroundTextTransform", "translate(-49%, -10%)");
+}
+
+function css(element, value) {
+	colourStyle.style.setProperty(element, value);
+}
+
+function updateValues(){
+	//updater
+}
