@@ -13,6 +13,7 @@ let count = -1;
 let timeout;
 let names;
 let mode = "standard";
+names = nameList.available;
 
 modeChanger.addEventListener("keypress", function (event) {
 	if (event.key === "Enter") {
@@ -23,7 +24,6 @@ modeChanger.addEventListener("keypress", function (event) {
 
 // if user press any key and release
 inputBox.onkeyup = (e) => {
-	modeChange(true);
 	let userData = e.target.value; //user enetered data
 	let emptyArray = [];
 	if (userData) {
@@ -206,44 +206,35 @@ function notAnOption(name) {
 	alert("The name/initial ${name} is not exist in the data\nPlease check your input.");
 }
 
-function modeChange(secondary = false) {
-	let first;
-	let second;
-	let modes = ["standard", "fix"]
-	if (secondary){
-		first = modes[1];
-		second = modes[0];
-	}else{
-		first = modes[0];
-		second = modes[1];
-	}
-
+function modeChange() {
 	switch (mode) {
-		case first:
+		case "standard":
 			fixMode();
 			break;
 
-		case second:
+		case "fix":
 			standardMode();
 			break;
 	}
-	// function deleteNames(){
-
-	// };
 }
 
 function fixMode() {
 	mode = "fix";
 	colourStyle.style.setProperty("--background-colour", "#070870");
 	modeChanger.value = "Standard Mode";
-	names = nameList.eliminated;
 }
 
 function standardMode() {
 	mode = "standard";
 	colourStyle.style.setProperty("--background-colour", "#E22C0F");
 	modeChanger.value = "Fix Mode";
-	names = nameList.available;
+}
+
+function setVariables(){
+	let bol = 
+	function setNames(){
+
+	}
 }
 
 // if (navigator.onLine) {
